@@ -51,6 +51,16 @@ public class Main {
                 }
             }
         }
+        
+        try {
+            if(bothArabic) {
+                if(Integer.parseInt(nums[0]) == 0 || Integer.parseInt(nums[1]) == 0) throw new Exception("The calculator only accepts numbers from 1 to 10");
+            }
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            System.exit(1);
+        }
 
         try {
             if (!Arrays.asList(operations).contains(arithOperation)) throw new Exception("Operation is not correct");
