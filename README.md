@@ -1,3 +1,3 @@
-# Kata_Java_-estTask
+# Kata_Java_TestTask
 Тестовое для Ката Академии на Java
 Калькулятор римских и арабских цифр.
