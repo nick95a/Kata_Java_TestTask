@@ -38,10 +38,12 @@ public class Main {
 
         String[] nums = {words[0], words[2]};
         arithOperation = words[1];
+        
 
         for (int i = 0; i < nums.length; i++) {
             if (Arrays.asList(roman).contains(nums[i])) {
                 hasRoman = true;
+                bothArabic = false;
             } else {
                 bothRoman = false;
                 if (Arrays.toString(arabic).contains(nums[i])) {
@@ -51,15 +53,15 @@ public class Main {
                 }
             }
         }
-        
-        try {
-            if(bothArabic) {
-                if(Integer.parseInt(nums[0]) == 0 || Integer.parseInt(nums[1]) == 0) throw new Exception("The calculator only accepts numbers from 1 to 10");
+
+        if(bothArabic) {
+            try {
+                if (Integer.parseInt(nums[0]) == 0 || Integer.parseInt(nums[1]) == 0)
+                    throw new Exception("The calculator only accepts numbers from 1 to 10");
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+                System.exit(1);
             }
-        }
-        catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            System.exit(1);
         }
 
         try {
@@ -89,6 +91,7 @@ public class Main {
             System.out.println(ex.getMessage());
             System.exit(1);
         }
+
 
         if (bothRoman) {
             Roman romanCalc = new Roman(words);
